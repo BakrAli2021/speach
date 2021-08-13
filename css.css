@@ -57,6 +57,28 @@
         justify-content: space-around;
     }
     
+    .box .speak .inputbx {
+        position: relative;
+    }
+    
+    .box .speak .inputbx i::after {
+        background: #fdd3ec;
+        position: absolute;
+        content: 'Speak';
+        font-weight: bold;
+        color: #1e1669;
+        padding: 7px;
+        top: 55px;
+        left: -5%;
+        border-radius: 10px;
+        transition: 1s;
+        opacity: 0;
+    }
+    
+    .box .speak .inputbx:hover i::after {
+        opacity: 1;
+    }
+    
     .box .select {
         width: 17rem;
         box-shadow: inherit;

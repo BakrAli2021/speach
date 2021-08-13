@@ -19,8 +19,8 @@ voiceBtn.addEventListener('click', function() {
 
         setTimeout(() => {
             voiceBtn.classList.remove('active');
-            search(text);
         }, 3000);
+
     } else {
         alert("Speak Or Write Please");
     }
@@ -33,6 +33,7 @@ select.addEventListener('change', function() {
 
 
 let btn = document.querySelector('.inputbx .icon'),
+    searchbtn = document.querySelector('.search'),
     icon = document.querySelector('.inputbx .icon i');
 let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 if (!SpeechRecognition) {
@@ -68,6 +69,10 @@ if (!SpeechRecognition) {
         textarea.value = transcript
     })
 }
+searchbtn.addEventListener("click", () => {
+    search(textarea.value);
+    textarea.value = "";
+});
 
 function search(searchvalue) {
     window.location.href = `https://www.google.com/search?q=${searchvalue}`;
